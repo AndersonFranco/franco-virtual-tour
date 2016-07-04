@@ -2,7 +2,7 @@
 
 /**
  * Plugin Name: Franco Virtual Tour
- * Plugin URI: https://github.com/AndersonFranco/virtual-tour-gallery
+ * Plugin URI: https://github.com/AndersonFranco/franco-virtual-tour
  * Description: Street View Gallery.
  * Author: Anderson Franco
  * Author URI: http://www.francotecnologia.com/
