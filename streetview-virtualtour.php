@@ -10,7 +10,7 @@
 <div id="primary" class="franco_virtualtour-index">
     <div id="content" role="main">
     <h2>Google Street View</h2>
-    <?php $loop = new WP_Query(array('post_type' => 'franco_virtualtour')); ?>
+    <?php $loop = new WP_Query(array('post_type' => 'franco_virtualtour', 'nopaging' => true)); ?>
     <?php $i = 0; while ($loop->have_posts()): $loop->the_post(); ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <header>
