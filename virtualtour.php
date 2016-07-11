@@ -33,6 +33,7 @@ class FrancoVirtualTour
         add_action('wp_enqueue_scripts', array(get_called_class(), 'css'), 98);
         add_filter('template_include', array(get_called_class(), 'template'), 1);
         add_filter('pre_get_document_title', array(get_called_class(), 'pageTitle'), 100, 1);
+        add_action('wp_head', array(get_called_class(), 'metaTags'));
     }
 
     public function createPostType()
@@ -95,6 +96,16 @@ class FrancoVirtualTour
     public function pageTitle($title)
     {
         return is_single() ? $title : 'Google Street View - Virtual Tours';
+    }
+
+    public function metaTags()
+    {
+        if (is_single()) {
+            echo '<meta property="og:title" content="' . get_the_title() . '">';
+            if (has_post_thumbnail()) {
+                echo '<meta property="og:image" content="' . get_the_post_thumbnail_url() . '">';
+            }
+        }
     }
 
 }
